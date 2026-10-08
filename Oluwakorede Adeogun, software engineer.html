@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oluwakorede Adeogun, software engineer</title>
+<meta name="description" content="Oluwakorede Adeogun is a software engineer and computer science student at the University of Ibadan, building mobile and web apps with React and React Native.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF0F6; --ink:#141C4E; --muted:#4B5382; --rule:#C5CAE0;
+  --mark:#FFD04A; --mark-ink:#141C4E; --link:#2B44B8; --band:#8F9BD6;
+  --sans:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1233; --ink:#E9ECFA; --muted:#A3ABD6; --rule:#2A3270; --link:#9DB0FF; --band:#3A4590;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1233; --ink:#E9ECFA; --muted:#A3ABD6; --rule:#2A3270; --link:#9DB0FF; --band:#3A4590;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:1.125rem;line-height:1.62;-webkit-text-size-adjust:100%}
+.wrap{max-width:68rem;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+a{color:var(--link);text-underline-offset:.2em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:3px}
+:focus-visible{outline:3px solid var(--mark);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--sans);margin:0}
+
+/* top bar */
+.bar{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.4rem 0;font-family:var(--sans);font-size:.95rem}
+.bar b{font-weight:700}
+.bar nav{display:flex;gap:1.3rem;flex-wrap:wrap}
+.bar a{color:var(--ink);text-decoration:none}
+.bar a:hover{text-decoration:underline;text-decoration-thickness:2px}
+
+/* hero */
+.hero{padding:clamp(2.5rem,7vw,5rem) 0 2.5rem}
+h1{font-size:clamp(2.6rem,13vw,8rem);line-height:.93;font-weight:800;letter-spacing:-.035em;font-variation-settings:"wdth" 80,"opsz" 96}
+h1 span{display:block}
+.prompter{margin-top:clamp(2rem,5vw,3.5rem);font-family:var(--sans);font-size:clamp(1.25rem,3.3vw,1.95rem);line-height:1.3;font-weight:500;font-variation-settings:"wdth" 92}
+.ln{margin:.2rem 0 .2rem -.4em;padding:.08em .4em;width:fit-content;max-width:100%;transition:opacity .4s,background-color .4s,color .4s}
+.reading .ln{opacity:.28}
+.reading .ln.on{opacity:1;background:var(--mark);color:var(--mark-ink)}
+.contact-row{display:flex;flex-wrap:wrap;gap:.5rem 1.8rem;margin:2.2rem 0 0;padding:0;list-style:none;font-family:var(--sans);font-weight:600}
+
+/* adire band */
+.band{color:var(--band);line-height:0;margin:1.5rem 0 0}
+.band svg{display:block;width:100%;height:56px}
+
+/* sections */
+.sec{display:grid;grid-template-columns:1fr;gap:1.4rem;padding:3.2rem 0;border-top:1px solid var(--rule)}
+.sec>h2{font-size:1.15rem;font-weight:700;font-variation-settings:"wdth" 90}
+@media (min-width:56rem){
+  .sec{grid-template-columns:11rem minmax(0,44rem);gap:0 3rem;padding:4.2rem 0}
+  .sec>h2{position:sticky;top:calc(1.5rem + env(safe-area-inset-top,0px));align-self:start}
+}
+.about{margin:0;font-size:1.25rem;line-height:1.6}
+
+.job+.job{margin-top:2.8rem}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.2rem 1.5rem;align-items:baseline}
+.job h3{font-size:1.45rem;font-weight:700;line-height:1.2;font-variation-settings:"wdth" 90}
+.when{font-family:var(--sans);font-size:.95rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.where{margin:.2rem 0 .9rem;color:var(--muted);font-size:1rem}
+.job ul{margin:0;padding-left:1.15rem}
+.job li{margin:.5rem 0;padding-left:.2rem}
+.job li::marker{color:var(--mark-ink);}
+.job li::marker{color:var(--link)}
+
+.proj+.proj{margin-top:2.2rem}
+.proj h3{font-size:1.45rem;font-weight:700;font-variation-settings:"wdth" 90}
+.proj .stack{font-family:var(--sans);font-size:.95rem;color:var(--muted);margin:.15rem 0 .5rem}
+.proj p{margin:.4rem 0 0}
+.proj .note{font-family:var(--sans);font-size:.9rem;color:var(--muted)}
+
+dl.skills{margin:0;display:grid;grid-template-columns:1fr;gap:.2rem 1.5rem}
+dl.skills dt{font-family:var(--sans);font-weight:700;margin-top:1rem}
+dl.skills dd{margin:0}
+@media (min-width:40rem){
+  dl.skills{grid-template-columns:11rem 1fr}
+  dl.skills dt{margin-top:0;padding:.55rem 0;border-bottom:1px solid var(--rule)}
+  dl.skills dd{padding:.55rem 0;border-bottom:1px solid var(--rule)}
+}
+
+.edu h3{font-size:1.3rem;font-weight:700;font-variation-settings:"wdth" 90}
+.edu p{margin:.2rem 0 0;color:var(--muted)}
+
+.big-links{margin:0;padding:0;list-style:none;font-family:var(--sans)}
+.big-links li{margin:.35rem 0}
+.big-links a{font-size:clamp(1.3rem,4.4vw,2rem);font-weight:700;font-variation-settings:"wdth" 88;word-break:break-word}
+.hint{margin:1.2rem 0 0;color:var(--muted)}
+
+footer{padding:2.5rem 0 3rem;border-top:1px solid var(--rule);font-family:var(--sans);font-size:.9rem;color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ln{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="bar">
+    <b>Oluwakorede Adeogun</b>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-labelledby="name">
+    <h1 id="name"><span>Oluwakorede</span><span>Adeogun</span></h1>
+
+    <div class="prompter" id="prompter">
+      <p class="ln" style="margin-bottom:.2rem">I build mobile and web products in React and React Native.</p>
+      <p class="ln">I'm a software engineer at Stalwart Crest.</p>
+      <p class="ln">I also run technical training for students at the University of Ibadan.</p>
+    </div>
+
+    <ul class="contact-row">
+      <li><a href="mailto:virgilkr007@gmail.com">Email me</a></li>
+      <li><a href="https://github.com/Virgilkr007" rel="noopener">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/oluwakorede-adeogun-9758542ab" rel="noopener">LinkedIn</a></li>
+    </ul>
+
+    <div class="band" aria-hidden="true">
+      <svg preserveAspectRatio="none" focusable="false">
+        <defs>
+          <pattern id="adire" width="56" height="56" patternUnits="userSpaceOnUse">
+            <g fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="28" cy="28" r="5"/>
+              <circle cx="28" cy="28" r="11"/>
+              <circle cx="28" cy="28" r="17"/>
+            </g>
+            <g fill="currentColor">
+              <circle cx="0" cy="0" r="3"/><circle cx="56" cy="0" r="3"/>
+              <circle cx="0" cy="56" r="3"/><circle cx="56" cy="56" r="3"/>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#adire)"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-about">
+    <h2 id="h-about">About</h2>
+    <p class="about">I'm a computer science student and software engineer. I've built mobile and web products, from a study planner for students to an app that seals photos, video and voice notes into a verifiable record. React and React Native are where I'm strongest, and I also work in TypeScript, Python and Java. I like teaching what I learn, so I organize technical training for other students.</p>
+  </section>
+
+  <section class="sec" id="work" aria-labelledby="h-work">
+    <h2 id="h-work">Work</h2>
+    <div>
+      <article class="job">
+        <div class="job-head">
+          <h3>Software engineer</h3>
+          <span class="when">Apr 2025 to present</span>
+        </div>
+        <p class="where">Stalwart Crest, remote from Delaware, US</p>
+        <ul>
+          <li>Helped build Kaizo, a student-assistance app where students plan their reading, upload lesson notes and manage their study time.</li>
+          <li>Built the reading-type selection feature and a priority-based scheduler that lets students sequence tasks around competing deadlines.</li>
+          <li>Part of the development team for Etch, a mobile app that bundles photos, video and voice notes into a sealed, time-stamped record, shared as one link that opens in any browser.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Central operations and programs coordinator</h3>
+          <span class="when">Jan 2026 to present</span>
+        </div>
+        <p class="where">Stalwart Crest Student Innovation Club (SCSIC), University of Ibadan</p>
+        <ul>
+          <li>Help coordinate SCSIC's technical training across frontend, backend, full stack, UI/UX design and digital creation, including on-campus sessions like Java programming tutorials.</li>
+          <li>Support workshops, tutorials, hackathon prep and career-readiness programs, working with tutors and campus leads to keep sessions structured.</li>
+          <li>Manage SCSIC's Substack and Medium content, and contribute to its campus-expansion framework so programs and workflows can be repeated at other universities.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="projects" aria-labelledby="h-projects">
+    <h2 id="h-projects">Projects</h2>
+    <div>
+      <article class="proj">
+        <h3>Pompect</h3>
+        <p class="stack">React Native, TypeScript, Expo</p>
+        <p>A teleprompter mobile app with a state store and on-device storage, so scripts you save stay on your phone.</p>
+      </article>
+      <article class="proj">
+        <h3>Kaizo</h3>
+        <p class="stack">Built at Stalwart Crest</p>
+        <p>A student-assistance app for planning reading, uploading lesson notes and managing study time. I worked on reading-type selection and the priority-based scheduler.</p>
+      </article>
+      <article class="proj">
+        <h3>Etch</h3>
+        <p class="stack">Built at Stalwart Crest</p>
+        <p>A mobile app that turns photos, video and voice notes into one sealed, time-stamped record. You share it as a single link that opens in any browser.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="skills" aria-labelledby="h-skills">
+    <h2 id="h-skills">Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>JavaScript, TypeScript, Python, Java, C</dd>
+      <dt>Frameworks</dt><dd>React, React Native, Expo, LangGraph, LangChain</dd>
+      <dt>Backend and data</dt><dd>Supabase</dd>
+      <dt>Developer tools</dt><dd>Git, GitHub, VS Code</dd>
+      <dt>Also</dt><dd>Program coordination, technical writing</dd>
+    </dl>
+  </section>
+
+  <section class="sec edu" aria-labelledby="h-edu">
+    <h2 id="h-edu">Education</h2>
+    <div>
+      <h3>Bachelor of Science, Computer Science</h3>
+      <p>University of Ibadan, Ibadan, Nigeria. Expected 2029.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="contact" aria-labelledby="h-contact">
+    <h2 id="h-contact">Contact</h2>
+    <div>
+      <ul class="big-links">
+        <li><a href="mailto:virgilkr007@gmail.com">virgilkr007@gmail.com</a></li>
+        <li><a href="https://github.com/Virgilkr007" rel="noopener">github.com/Virgilkr007</a></li>
+        <li><a href="https://linkedin.com/in/oluwakorede-adeogun-9758542ab" rel="noopener">LinkedIn</a></li>
+      </ul>
+      <p class="hint">Email is the quickest way to reach me.</p>
+    </div>
+  </section>
+
+  <footer>Oluwakorede Adeogun, Ibadan, Nigeria</footer>
+</div>
+
+<script>
+(function(){
+  var box=document.getElementById('prompter');
+  if(!box||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var lines=Array.prototype.slice.call(box.querySelectorAll('.ln'));
+  var i=0;
+  box.classList.add('reading');
+  function step(){
+    lines.forEach(function(l,k){l.classList.toggle('on',k===i)});
+    i++;
+    if(i<=lines.length){setTimeout(step,1300)}
+    else{box.classList.remove('reading');lines.forEach(function(l){l.classList.remove('on')})}
+  }
+  setTimeout(step,600);
+})();
+</script>
+</body>
+</html>
